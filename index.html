@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style/main.css">
+    <title>BECO</title>
+</head>
+<body>
+    <div id="page">
+        <sidebar 
+            :is-closed="isSidebarClosed" 
+            :pages="pages" 
+            :current-page="currentPage" 
+            @toggle-sidebar="toggleSidebar"
+            @go-to-page="goToPage"></sidebar>
+
+        <header :class="['main-header', 'container', { 'main-header--scroll': isPageScrolled }]">
+            <h1 class="page-title">{{ currentPage.title }}</h1>
+            <input class="search" type="text" placeholder="Какой магазин вам нужен?">
+        </header>
+
+        <main>
+            <ul :class="['promo-codes-list', 'container', { 'promo-codes-list--scroll': isPageScrolled }]">
+                <li class="promo-code">
+                    <div class="promo-code__text">
+                        <div class="promo-code__description">
+                            <h2 class="promo-code__title">Пробка на мира</h2>
+                            <p class="promo-code__subtitle">Вечер для двоих</p>
+                        </div>
+                        <div class="promo-code__reduction">
+                            <strong class="promo-code__reduction-code">50%</strong>
+                            <span class="promo-code__reduction-type">скидка</span>
+                        </div>
+                    </div>
+                    <img class="promo-code__img" src="img/wine.png" alt="Вино">
+                </li>
+                <li class="promo-code">
+                    <div class="promo-code__text">
+                        <div class="promo-code__description">
+                            <h2 class="promo-code__title">Кино и немцы</h2>
+                            <p class="promo-code__subtitle">Бесплатный бокал пива</p>
+                        </div>
+                        <div class="promo-code__reduction">
+                            <strong class="promo-code__reduction-code">варвар</strong>
+                            <span class="promo-code__reduction-type">промокод</span>
+                        </div>
+                    </div>
+                    <img class="promo-code__img" src="img/beer.png" alt="Пиво">
+                </li>
+                <li class="promo-code">
+                    <div class="promo-code__text">
+                        <div class="promo-code__description">
+                            <h2 class="promo-code__title">Valery cakes</h2>
+                            <p class="promo-code__subtitle">Торт</p>
+                        </div>
+                        <div class="promo-code__reduction">
+                            <strong class="promo-code__reduction-code">30%</strong>
+                            <span class="promo-code__reduction-type">скидка</span>
+                        </div>
+                    </div>
+                    <img class="promo-code__img" src="img/cake.png" alt="Торт">
+                </li>
+                <li class="promo-code">
+                    <div class="promo-code__text">
+                        <div class="promo-code__description">
+                            <h2 class="promo-code__title">Пробка на мира</h2>
+                            <p class="promo-code__subtitle">Вечер для двоих</p>
+                        </div>
+                        <div class="promo-code__reduction">
+                            <strong class="promo-code__reduction-code">50%</strong>
+                            <span class="promo-code__reduction-type">скидка</span>
+                        </div>
+                    </div>
+                    <img class="promo-code__img" src="img/wine.png" alt="Вино">
+                </li>
+                <li class="promo-code">
+                    <div class="promo-code__text">
+                        <div class="promo-code__description">
+                            <h2 class="promo-code__title">Кино и немцы</h2>
+                            <p class="promo-code__subtitle">Бесплатный бокал пива</p>
+                        </div>
+                        <div class="promo-code__reduction">
+                            <strong class="promo-code__reduction-code">варвар</strong>
+                            <span class="promo-code__reduction-type">промокод</span>
+                        </div>
+                    </div>
+                    <img class="promo-code__img" src="img/beer.png" alt="Пиво">
+                </li>
+                <li class="promo-code">
+                    <div class="promo-code__text">
+                        <div class="promo-code__description">
+                            <h2 class="promo-code__title">Valery cakes</h2>
+                            <p class="promo-code__subtitle">Торт</p>
+                        </div>
+                        <div class="promo-code__reduction">
+                            <strong class="promo-code__reduction-code">30%</strong>
+                            <span class="promo-code__reduction-type">скидка</span>
+                        </div>
+                    </div>
+                    <img class="promo-code__img" src="img/cake.png" alt="Торт">
+                </li>
+            </ul>
+        </main>
+    </div>
+
+    <script src="script/vue.js"></script>
+    <script src="script/main.js"></script>
+</body>
+</html>
