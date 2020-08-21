@@ -1,13 +1,15 @@
 Vue.component("sidebar", {
     props: ["pages", "current-page", "is-closed"],
     template: `
-        <div :class="['sidebar', { 'sidebar--closed': isClosed }]">
-            <svg class="logo">
-                <use xlink:href="../img/sprite.svg#logo"/>
-            </svg>
-            <svg class="emblem">
-                <use xlink:href="../img/sprite.svg#emblem"/>
-            </svg>
+        <div :class="['sidebar', [ isClosed ? 'sidebar--closed' : 'sidebar--opened' ]]">
+            <a class="logo-link" href="#">
+                <svg width="49" height="50" class="emblem">
+                    <use xlink:href="img/sprite.svg#emblem"/>
+                </svg>
+                <svg width="61" height="24" class="logo">
+                    <use xlink:href="img/sprite.svg#logo"/>
+                </svg>
+            </a>
             <ul class="main-navigation">
                 <li v-for="page in pages" :class="[
                     'main-navigation__item', 
@@ -15,7 +17,7 @@ Vue.component("sidebar", {
                 ]">
                     <a @click="goToPage(page)">
                         <svg class="icon">
-                            <use :xlink:href="'../img/sprite.svg#' + page.name"/>
+                            <use :xlink:href="'img/sprite.svg#' + page.name"/>
                         </svg>
                         {{ page.title }}
                     </a>
@@ -23,16 +25,16 @@ Vue.component("sidebar", {
             </ul>
             <button class="sidebar__toggle-btn" @click="toggleSidebar">
                 <svg>
-                    <use v-if="isClosed" xlink:href="../img/sprite.svg#sidebar-btn--open"/>
-                    <use v-if="!isClosed" xlink:href="../img/sprite.svg#sidebar-btn--close"/>
+                    <use v-if="isClosed" xlink:href="img/sprite.svg#sidebar-btn--open"/>
+                    <use v-if="!isClosed" xlink:href="img/sprite.svg#sidebar-btn--close"/>
                 </svg>
             </button>
         </div>
     `,
     mounted() {
-        if (screen.width >= 1440) {
-            this.toggleSidebar(false);
-        }
+        // if (screen.width >= 1440) {
+        //     this.toggleSidebar(false);
+        // }
     },
     methods: {
         toggleSidebar() {

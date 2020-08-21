@@ -46,29 +46,51 @@ h1, h2, h3, ul, p {
   height: 20px;
 }
 
-.sidebar--closed .logo,
-.sidebar--closed .main-navigation {
-  display: none;
-}
-
-.sidebar:not(.sidebar--closed) {
+.sidebar--opened {
   width: 192px;
-  padding-top: 40px;
 }
 
-.sidebar:not(.sidebar--closed) .sidebar__toggle-btn {
+.sidebar--opened .logo,
+.sidebar--opened .emblem {
+  display: block;
+}
+
+.sidebar--opened .main-navigation {
+  display: block;
+}
+
+.sidebar--opened .sidebar__toggle-btn {
   left: 192px;
 }
 
-.logo {
-  width: 67px;
-  height: 24px;
-  margin-bottom: 63px;
-  margin-left: 20px;
+.logo,
+.emblem,
+.main-navigation {
+  display: none;
+}
+
+.logo-link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 27px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  padding-left: 20px;
 }
 
 .emblem {
-  display: none;
+  width: 24px;
+  height: 24px;
+  margin-right: 5px;
+}
+
+.logo {
+  width: 38px;
+  height: 21px;
 }
 
 .main-navigation {
@@ -256,6 +278,7 @@ h1, h2, h3, ul, p {
   position: absolute;
   top: 0;
   right: -1px;
+  height: 100%;
 }
 
 @media (min-width: 768px) {
@@ -271,33 +294,40 @@ h1, h2, h3, ul, p {
   }
   .sidebar--closed .emblem {
     display: block;
-    width: 25px;
-    height: 24px;
-    margin-top: 40px;
-    margin-bottom: 67px;
-    margin-left: auto;
-    margin-right: auto;
+    margin-right: 0;
   }
   .sidebar--closed .main-navigation {
     display: block;
   }
   .sidebar--closed .main-navigation__item {
-    padding-left: 0;
+    padding-left: 40px;
   }
-  .sidebar--closed .main-navigation__item .icon {
-    margin: 0 auto;
+  .sidebar--closed .main-navigation__item--current {
+    padding-left: 38px;
   }
   .sidebar--closed .main-navigation__item a {
     font-size: 0;
   }
-  .sidebar:not(.sidebar--closed) {
+  .sidebar--opened {
     width: 246px;
   }
-  .sidebar:not(.sidebar--closed) .sidebar__toggle-btn {
+  .sidebar--opened .sidebar__toggle-btn {
     left: 246px;
   }
-  .logo {
-    margin-left: 40px;
+  .sidebar--opened .logo-link {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    padding-left: 40px;
+  }
+  .sidebar--opened .main-navigation__item .icon {
+    margin-right: 14px;
+  }
+  .logo-link {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding-left: 0;
   }
   .main-navigation__item {
     padding-left: 40px;
@@ -314,11 +344,10 @@ h1, h2, h3, ul, p {
     display: block;
     width: 24px;
     height: 24px;
-    margin-right: 14px;
     stroke: #000000;
   }
   .main-navigation__item--current {
-    padding-left: 39px;
+    padding-left: 38px;
   }
   .main-navigation__item--current .icon {
     stroke: #34ABE0;
@@ -363,6 +392,7 @@ h1, h2, h3, ul, p {
   }
   .promo-code {
     width: 48.52459016393443%;
+    min-height: 144px;
     margin-bottom: 20px;
     padding: 15px 18px;
   }
@@ -398,16 +428,39 @@ h1, h2, h3, ul, p {
   .sidebar__toggle-btn {
     display: none;
   }
+  .sidebar--closed .logo-link,
+  .sidebar--opened .logo-link {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    margin-bottom: 12px;
+    padding-left: 43px;
+  }
+  .sidebar--closed .emblem,
+  .sidebar--opened .emblem {
+    display: block;
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+  }
+  .sidebar--closed .logo,
+  .sidebar--opened .logo {
+    display: block;
+  }
   .sidebar--closed .main-navigation__item,
-  .sidebar.sidebar:not(.sidebar--closed) .main-navigation__item {
+  .sidebar--opened .main-navigation__item {
     padding-left: 42px;
   }
+  .sidebar--closed .main-navigation__item--current,
+  .sidebar--opened .main-navigation__item--current {
+    padding-left: 40px;
+  }
   .sidebar--closed .main-navigation__item a,
-  .sidebar.sidebar:not(.sidebar--closed) .main-navigation__item a {
+  .sidebar--opened .main-navigation__item a {
     font-size: 16px;
   }
   .sidebar--closed .main-navigation__item .icon,
-  .sidebar.sidebar:not(.sidebar--closed) .main-navigation__item .icon {
+  .sidebar--opened .main-navigation__item .icon {
     margin: 0;
     margin-right: 15px;
   }
@@ -445,6 +498,7 @@ h1, h2, h3, ul, p {
   }
   .promo-code {
     width: 346px;
+    min-height: 160px;
   }
   .promo-code:nth-child(odd) {
     margin-right: 0;
