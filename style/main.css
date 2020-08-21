@@ -98,6 +98,12 @@ h1, h2, h3, ul, p {
 }
 
 .main-navigation__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   margin-bottom: 42px;
   padding-left: 20px;
 }

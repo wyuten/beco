@@ -28,7 +28,6 @@ $headerHeightInScroll: 107px;
 
     width: $sidebarMobileWidth;
     height: 100vh;
-    // padding-top: 40px;
 
     background-color: #F3F4F9;
 }
@@ -104,6 +103,8 @@ $headerHeightInScroll: 107px;
 }
 
 .main-navigation__item {
+    display: flex;
+    justify-content: flex-start;
     margin-bottom: 42px;
     padding-left: 20px;
 
