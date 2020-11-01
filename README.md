@@ -1,24 +1,19 @@
 # beco
 
-## Project setup
+## Дизайн проекта
+https://www.figma.com/file/SuP66vDZuLFSnsUG2U55EX/Beco
+
+## Настройка проекта
 ```
 npm install
-```
+``` 
 
-### Compiles and hot-reloads for development
+### Компилирование и подготовка для разработки
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+### Компилирование и подготовка для производства
 ```
 npm run build
 ```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
